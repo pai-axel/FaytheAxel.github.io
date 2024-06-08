@@ -1,0 +1,259 @@
+/* Enhanced CSS */
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: rgba(17, 17, 17, 0.9);
+  padding: 10px 20px;
+  text-align: right;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff4500;
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Home Section Styles */
+.home .content {
+  max-width: 50%;
+  margin-right: 20px;
+  text-align: left;
+}
+
+.home h1 {
+  color: #ff4500;
+  font-size: 3em;
+  margin: 0;
+  animation: fadeInDown 1s ease-out;
+}
+
+.home .changing-text {
+  color: #fff;
+  font-size: 1.5em;
+  margin: 0;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid #ff4500;
+}
+
+.home .changing-text::after {
+  content: '|';
+  animation: blink 0.7s step-end infinite;
+  color: #ff4500;
+}
+
+@keyframes blink {
+  from, to { opacity: 1 }
+  50% { opacity: 0 }
+}
+
+.home .name {
+  color: #ff4500;
+  font-size: 2.5em;
+  animation: fadeInLeft 1s ease-out;
+}
+
+.home .description {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin: 20px 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+.resume-button {
+  display: inline-block;
+  background-color: #ff4500;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+  animation: fadeInUp 1s ease-out;
+}
+
+.resume-button:hover {
+  background-color: #27b6f9;
+}
+
+/* Profile Picture Styles */
+.profile-picture {
+  position: relative;
+  max-width: 400px;
+  margin-top: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-picture::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 69, 0, 0.6), rgba(255, 255, 255, 0));
+  z-index: -1;
+  filter: blur(15px);
+}
+
+.profile-picture img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+footer {
+  background-color: #111;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.social-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-links i {
+  font-size: 1.5em;
+}
+
+.social-links a:hover {
+  color: #ff4500;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .section {
+    padding: 20px;
+  }
+
+  .home .content {
+    margin: 0;
+  }
+
+  .profile-picture {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .home h1 {
+    font-size: 2.5em;
+  }
+
+  .home .name {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .home h1 {
+    font-size: 2em;
+  }
+
+  .home .name {
+    font-size: 1.5em;
+  }
+
+  .resume-button {
+    padding: 10px;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
