@@ -35,7 +35,7 @@ window.addEventListener('scroll', function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     if (scrollTop > lastScrollTop) {
         // Scroll down
-        header.style.top = '-60px'; // Adjust based on header height
+        header.style.top = '-180px'; // Adjust based on header height
     } else {
         // Scroll up
         header.style.top = '0';
