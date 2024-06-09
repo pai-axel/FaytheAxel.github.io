@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const words = ['"Halo"', '"Hello"', '"你好"', '"こんにちは"'];
+    const words = ['"Halo"', '"Hello"', '"你好"', '"こんにちは"', '"Hola"', '"Bonjour"'];
     let currentWordIndex = 0;
     const changingText = document.querySelector('.changing-text');
     const typingSpeed = 150; // Typing speed in milliseconds
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     typeWord(words[currentWordIndex]);
 });
-
+//for header
 let lastScrollTop = 0;
 const header = document.querySelector('header');
 
@@ -35,14 +35,31 @@ window.addEventListener('scroll', function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     if (scrollTop > lastScrollTop) {
         // Scroll down
-        header.style.top = '-60px'; // Adjust based on your header height
+        header.style.top = '-60px'; // Adjust based on header height
     } else {
         // Scroll up
         header.style.top = '0';
     }
     lastScrollTop = scrollTop;
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const galleryImages = document.querySelectorAll('.gallery img');
+    galleryImages.forEach(img => {
+        img.style.width = '600px';
+        img.style.height = '400px';
+        img.style.objectFit = 'cover';
+    });
+});
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    const galleryImages = document.querySelectorAll('.gallery img');
+    galleryImages.forEach(img => {
+      img.style.width = '300px';
+      img.style.height = '200px';
+      img.style.objectFit = 'cover';
+    });
+  });
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -111,3 +128,4 @@ gsap.from(".gallery-images img", {
     duration: 1,
     stagger: 0.2
 });
+
