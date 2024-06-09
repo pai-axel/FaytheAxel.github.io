@@ -42,3 +42,72 @@ window.addEventListener('scroll', function() {
     }
     lastScrollTop = scrollTop;
 });
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Education section scroll animation
+gsap.from("#education .univ-logo img", {
+    scrollTrigger: {
+        trigger: "#education",
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+    },
+    y: 50,
+    opacity: 0,
+    duration: 1,
+});
+
+gsap.from("#education h2", {
+    scrollTrigger: {
+        trigger: "#education",
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1.5,
+});
+
+gsap.from("#education .description", {
+    scrollTrigger: {
+        trigger: "#education",
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+    },
+    y: 150,
+    opacity: 0,
+    duration: 2,
+});
+
+// Interactivity with GSAP (optional)
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".card", {
+    scrollTrigger: {
+        trigger: ".card-container",
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2
+});
+
+gsap.from(".gallery-images img", {
+    scrollTrigger: {
+        trigger: ".gallery",
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+    },
+    scale: 0.8,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2
+});
