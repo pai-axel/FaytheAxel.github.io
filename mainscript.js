@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const words = ['"Halo"', '"Hello"', '"你好"', '"こんにちは"'];
     let currentWordIndex = 0;
     const changingText = document.querySelector('.changing-text');
+    const typingSpeed = 150; // Typing speed in milliseconds
+    const eraseSpeed = 100;  // Erasing speed in milliseconds
+    const delayBetweenWords = 2000; // Delay between words in milliseconds
 
     function typeWord(word, index = 0) {
         if (index < word.length) {
