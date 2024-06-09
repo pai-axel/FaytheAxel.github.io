@@ -116,35 +116,44 @@ nav ul li a:hover {
   background-color: #27b6f9;
 }
 
-/* Profile Picture Styles */
+/* Profile picture with neon light and fade-out effect */
 .profile-picture {
   position: relative;
   max-width: 400px;
   margin-top: 20px;
-  border-radius: 50%;
-  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+  border: 3px solid #cf5b3d; /* Add a border */
+  border-radius: 30%; /* Make the border round */
+  padding: 10px; /* Space between border and image */
+  background: linear-gradient(45deg, #ff4500, #313131); /* Gradient background */
 }
 
-.profile-picture::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 69, 0, 0.6), rgba(255, 255, 255, 0));
-  z-index: -1;
-  filter: blur(15px);
+.profile-picture:hover {
+  transform: scale(1.1);
 }
 
 .profile-picture img {
   width: 100%;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 30%;
+  box-shadow: 0 0 20px rgba(255, 69, 0, 0.7);
   animation: fadeIn 1s ease-out;
   position: relative;
   z-index: 1;
+}
+
+/* Adding radial gradient animation around the profile picture */
+.profile-picture::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(circle, rgba(255,69,0,0.5), transparent);
+  border-radius: 30%;
+  z-index: -1;
+  animation: pulse 2s infinite;
 }
 
 footer {
