@@ -116,6 +116,21 @@ nav ul li a:hover {
   background-color: #27b6f9;
 }
 
+.sertif-button {
+  display: inline-block;
+  background-color: #ff4500;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+  animation: fadeInUp 1s ease-out;
+}
+
+.sertif-button:hover {
+  background-color: #27b6f9;
+}
 /* Profile picture with neon light and fade-out effect */
 .profile-picture {
   position: relative;
